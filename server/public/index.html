@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var lookup = function lookup(){
+        $.ajax({
+          url: '/hasIncoming'
+        }).success(function(g){
+          if(g=="TRUE"){
+            $('.hasIncoming').show();
+          }
+          else $('.hasIncoming').hide();
+        })
+        // setTimeout(function(){
+        //   lookup();
+        // }, (1000));
+      }
+      lookup();
+    });
+  </script>
+</head>
+<body>
+
+</html>
+<h2>Send a new message to the printer.</h2>
+<div class="hasIncoming" style="display:none;">
+  <p>
+    <strong>You have sent the message.</strong>
+    Sending a new one will replace it, as the printer
+    can only hold one message at a time.
+  </p>
+</div>
+<form method="post">
+<textarea name="msg" name="newmessage" style="width:50%;height:250px;"></textarea>
+<br><button>SEND</button>
+</form>
+
+
+
+</body>
