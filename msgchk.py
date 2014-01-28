@@ -1,4 +1,5 @@
-import urllib, json, re, Thermal_Formatter
+import urllib, json, re
+from Thermal_Formatter import Thermal_Formatter
 
 sky = json.loads(urllib.urlopen('http://sky.madebycm.no:5555/lookup').read())
 
@@ -6,7 +7,7 @@ try:
   sky['none']
   print 'I got nothing'
 except:
-  t = Thermal_Formatter.Thermal_Formatter()
+  t = Thermal_Formatter()
   msg = sky['msg'].split("\n")
   msglist = []
 
