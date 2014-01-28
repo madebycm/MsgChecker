@@ -1,4 +1,4 @@
-import urllib, json, subprocess, sys, Thermal_Formatter
+import urllib, json, Thermal_Formatter
 
 sky = json.loads(urllib.urlopen('http://sky.madebycm.no:5555/lookup').read())
 
