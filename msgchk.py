@@ -1,4 +1,4 @@
-import urllib, json, Thermal_Formatter
+import urllib, json, re, Thermal_Formatter
 
 sky = json.loads(urllib.urlopen('http://sky.madebycm.no:5555/lookup').read())
 
@@ -13,6 +13,7 @@ except:
   print 'New message! (1)'
 
   for line in msg:
+    line = re.sub(' +', ' ' , line)
     msglist.append(['s', line])
 
   msg = [
