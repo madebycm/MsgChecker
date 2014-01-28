@@ -11,7 +11,8 @@ except:
   t = Thermal_Formatter.Thermal_Formatter()
   # create
   msg = [
-    ['s', sky['msg']]
+      ['b', 'New message! (1)']
+    , ['s', sky['msg']]
   ]
   t.processAndPrint(msg
     )
